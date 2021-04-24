@@ -1,0 +1,10 @@
+baseURL = "https://example.com/"
+theme = "default"
+
+title = "hugo.website"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  author = "sbstjn"
+  twitter = "@sbstjn"
+  facebook = "669118929"

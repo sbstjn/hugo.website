@@ -1,0 +1,32 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<link rel="canonical" href="{{ .Permalink | absURL }}"/>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+{{ $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+<title>{{ .Title }} | {{ .Site.Title }}</title>
+<meta name="description" content="{{ .Description }}"/>
+<meta name="author" content="{{ $.Site.Params.author }}"/>
+
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA/n8AAPw/AAD4HwAA8A8AAOAHAADgBwAA4AcAAPGPAAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description"  content="{{ .Description }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink | absURL }}"/>
+<meta property="og:image" content="{{ .Permalink | absURL }}/social/facebook.png"/>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ $.Site.Params.twitter }}">
+<meta name="twitter:creator" content="{{ $.Site.Params.twitter }}">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:image" content="{{ .Permalink | absURL }}/social/twitter.png">
+
+<meta property="fb:admins" content="{{ $.Site.Params.facebook }}"/>
+<meta property="article:publisher" content="{{ $.Site.Params.facebook }}"/>
